@@ -10,7 +10,6 @@ h2{font-size:12px;border-bottom:1px solid #D0D0D0;padding:5px 0;}
 ol{margin:1em 0;padding:0 0 0 50px; line-height:30px}
 span a{ padding:0 5px;text-decoration:none;}
 </style>
-<link rel="stylesheet" href="../plugins/layuid/layui.css" media="all">
 </head>
 <body>
 <h1>欢迎使用方配.NET框架</h1>
