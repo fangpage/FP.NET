@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 <doc>
     <assembly>
@@ -1941,3 +1942,1948 @@
         </member>
     </members>
 </doc>
+=======
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FangPage.Common</name>
+    </assembly>
+    <members>
+        <member name="T:FangPage.Common.FPCache">
+            <summary>
+            方配缓存处理类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Insert(System.String,System.Object)">
+            <summary>
+            插入缓存项
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="obj">object对象</param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Insert(System.String,System.Object,System.String)">
+            <summary>
+            插入缓存项的文件依赖
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="obj">object对象</param>
+            <param name="fileName">文件绝对路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Insert(System.String,System.Object,System.Int32)">
+            <summary>
+            插入缓存项过期
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="obj">object对象</param>
+            <param name="expires">过期时间(分钟)</param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.InsertAt(System.String,System.String,System.Object)">
+            <summary>
+             插入缓存对象
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.InsertAt(System.String,System.Int32,System.Object)">
+            <summary>
+            创建用户缓存项
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.InsertAt(System.String,System.String,System.Object,System.Int32)">
+            <summary>
+            创建用户缓存项
+            </summary>
+            <param name="name">缓存Key</param>
+            <param name="key">用户id</param>
+            <param name="obj">object对象</param>
+            <param name="expires">过期时间(分钟)</param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.InsertAt(System.String,System.Int32,System.Object,System.Int32)">
+            <summary>
+            创建用户缓存项
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <param name="obj"></param>
+            <param name="expires"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Get(System.String)">
+            <summary>
+            获取缓存对象
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns>object对象</returns>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Get(System.String,System.String)">
+            <summary>
+            获取缓存对象
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Get(System.String,System.Int32)">
+            <summary>
+            获取缓存对象
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Remove(System.String)">
+            <summary>
+            删除缓存对象
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Remove(System.String,System.Int32)">
+            <summary>
+            删除单个子缓存对象
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Remove(System.String,System.String)">
+            <summary>
+            删除多个子缓存对象，以逗号进行分隔
+            </summary>
+            <param name="name"></param>
+            <param name="keys"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Remove(System.String,System.Int32,System.Int32)">
+            <summary>
+            删除单个子缓存
+            </summary>
+            <param name="name"></param>
+            <param name="key"></param>
+            <param name="expires"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Remove(System.String,System.String,System.Int32)">
+            <summary>
+            删除多个子缓存对象，以逗号进行分隔
+            </summary>
+            <param name="name"></param>
+            <param name="keys"></param>
+            <param name="expires"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.RemoveStart(System.String)">
+            <summary>
+            删除前辍缓存对象
+            </summary>
+            <param name="startkey"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.RemoveList(System.String,System.String)">
+            <summary>
+            删除列表缓存
+            </summary>
+            <param name="name"></param>
+            <param name="keys"></param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.RemovePattern(System.String)">
+            <summary>
+            通过正则表达式删除缓存
+            </summary>
+            <param name="pattern">缓存键正则匹配模式</param>
+        </member>
+        <member name="M:FangPage.Common.FPCache.Clear">
+            <summary>
+            清空所有的缓存
+            </summary>
+        </member>
+        <member name="T:FangPage.Common.FPConstants">
+            <summary>
+            文件处理标志
+            </summary>
+        </member>
+        <member name="T:FangPage.Common.FPFileItem">
+            <summary>
+            文件元数据。
+            可以使用以下几种构造方法：
+            本地路径：new FileItem("C:/temp.jpg");
+            本地文件：new FileItem(new FileInfo("C:/temp.jpg"));
+            字节数组：new FileItem("abc.jpg", bytes);
+            输入流：new FileItem("abc.jpg", stream);
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.IO.FileInfo)">
+            <summary>
+            基于本地文件的构造器。
+            </summary>
+            <param name="fileInfo">本地文件</param>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.String)">
+            <summary>
+            基于本地文件全路径的构造器。
+            </summary>
+            <param name="filePath">本地文件全路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.String,System.Byte[])">
+            <summary>
+            基于文件名和字节数组的构造器。
+            </summary>
+            <param name="fileName">文件名称（服务端持久化字节数组到磁盘时的文件名）</param>
+            <param name="content">文件字节数组</param>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.String,System.Byte[],System.String)">
+            <summary>
+            基于文件名、字节数组和媒体类型的构造器。
+            </summary>
+            <param name="fileName">文件名（服务端持久化字节数组到磁盘时的文件名）</param>
+            <param name="content">文件字字节数组</param>
+            <param name="mimeType">媒体类型</param>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            基于文件名和输入流的构造器。
+            </summary>
+            <param name="fileName">文件名称（服务端持久化输入流到磁盘时的文件名）</param>
+            <param name="stream">文件输入流</param>
+        </member>
+        <member name="M:FangPage.Common.FPFileItem.#ctor(System.String,System.IO.Stream,System.String)">
+            <summary>
+            基于文件名、输入流和媒体类型的构造器。
+            </summary>
+            <param name="fileName">文件名（服务端持久化输入流到磁盘时的文件名）</param>
+            <param name="stream">文件输入流</param>
+            <param name="mimeType">媒体类型</param>
+        </member>
+        <member name="T:FangPage.Common.FPArray">
+            <summary>
+            方配数组处理类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String)">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String,System.String)">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String,System.Int32)">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String,System.String,System.Int32)">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String,System.String[])">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitString(System.String,System.String[],System.Int32)">
+            <summary>
+            分割字符串成字符串数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String)">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String,System.Int32)">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String,System.String)">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String,System.String,System.Int32)">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="separator"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String,System.String[])">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPArray.SplitInt(System.String,System.String[],System.Int32)">
+            <summary>
+            分割字符串成整型数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="separator"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Join(System.String[])">
+            <summary>
+            串联数组
+            </summary>
+            <param name="strContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Join(System.String[],System.String)">
+            <summary>
+            串联数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Join(System.Int32[])">
+            <summary>
+            串联数组
+            </summary>
+            <param name="strContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Join(System.Int32[],System.String)">
+            <summary>
+            串联数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Append(System.String,System.String)">
+            <summary>
+            向后追加字符串数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Append(System.String,System.Int32)">
+            <summary>
+            向后追加字符串数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Append(System.String,System.Int32,System.String)">
+            <summary>
+            向后追加字符串数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Append(System.String,System.String,System.String)">
+            <summary>
+            向后追加字符串数组
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Push(System.String,System.String)">
+            <summary>
+             推加字符串数组，如果数组中已有该字符串，则不集成
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <returns>如不存在则返回-1</returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Push(System.String,System.Int32)">
+            <summary>
+            推加字符串数组，如果数组中已有该字符串，则不集成
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Push(System.String,System.Int32,System.String)">
+            <summary>
+            推加字符串数组，如果数组中已有该字符串，则不集成
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Push(System.String,System.String,System.String)">
+            <summary>
+            推加字符串数组，如果数组中已有重复字符串，则不集成，可多个推加
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.String,System.String[])">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.Int32,System.String[])">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.Int32,System.String)">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <returns>如不存在则返回-1</returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.String,System.String)">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.Int32,System.String,System.String)">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <param name="separator"></param>
+            <returns>如不存在则返回-1</returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.String,System.String,System.String)">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InArray(System.String,System.String,System.String[])">
+            <summary>
+            判断在数组中位置 -1为不存在
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <param name="separator"></param>
+            <returns>如不存在则返回-1</returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InIPArray(System.String,System.String[])">
+            <summary>
+            返回指定IP是否在指定的IP数组所限定的范围内, IP数组内的IP地址可以使用*表示该IP段任意, 例如192.168.1.*
+            </summary>
+            <param name="ip"></param>
+            <param name="iparray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.InMobileArray(System.String,System.String[])">
+            <summary>
+            返回指定手机号是否在指定的手机数组所限定的范围内, 手机数组内的IP地址可以使用*表示该手机段任意, 例如192.168.1.*
+            </summary>
+            <param name="mobile"></param>
+            <param name="mobilearray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String[],System.String)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String[],System.Int32)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="item"></param>
+            <param name="stringArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String,System.String)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String,System.Int32)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String,System.String,System.String)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String,System.Int32,System.String)">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Contain(System.String,System.String,System.String[])">
+            <summary>
+            字符串数组中是否包含该元素
+            </summary>
+            <param name="stringArray"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Replace(System.String,System.String,System.String)">
+            <summary>
+            替换数组中item相同的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="item"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Replace(System.String,System.String,System.Int32)">
+            <summary>
+            替换数组中指定位置的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Replace(System.String,System.Int32,System.Int32)">
+            <summary>
+            替换数组中指定位置的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Replace(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            替换数组中指定位置的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Replace(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            替换数组中指定位置的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Update(System.String,System.Int32,System.Int32)">
+            <summary>
+            更新指定位置数组中的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Update(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            更新指定位置数组中的值
+            </summary>
+            <param name="strContent"></param>
+            <param name="value"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.Int32)">
+            <summary>
+             获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.Int32,System.String)">
+            <summary>
+            获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.Int32,System.String[])">
+            <summary>
+            获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.String,System.String)">
+            <summary>
+            获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetString(System.String,System.String,System.String,System.String[])">
+            <summary>
+            获取数组中指定位置的字符串值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.Int32)">
+            <summary>
+             获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.Int32,System.String)">
+            <summary>
+            获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.Int32,System.String[])">
+            <summary>
+            获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.String,System.String)">
+            <summary>
+            获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.GetInt(System.String,System.String,System.String,System.String[])">
+            <summary>
+            获取数组中指定位置的整型值
+            </summary>
+            <param name="strContent"></param>
+            <param name="strValue"></param>
+            <param name="item"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.FmatInt(System.String)">
+            <summary>
+            格式化数组成字整型数组
+            </summary>
+            <param name="strContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Remove(System.String,System.Int32)">
+            <summary>
+            删除指定位置的数组成员
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Remove(System.String,System.String)">
+            <summary>
+            删除指定字符串的数组成员
+            </summary>
+            <param name="strContent"></param>
+            <param name="remove"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Remove(System.String,System.String,System.String)">
+            <summary>
+            删除指定字符串的数组成员
+            </summary>
+            <param name="strContent"></param>
+            <param name="remove"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.Remove(System.String,System.Int32,System.String)">
+            <summary>
+            删除指定位置的数组成员
+            </summary>
+            <param name="strContent"></param>
+            <param name="index"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.RemoveSame(System.String)">
+            <summary>
+            数组去重
+            </summary>
+            <param name="TempArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.RemoveSame(System.String,System.String)">
+            <summary>
+            数组去重
+            </summary>
+            <param name="TempArray"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPArray.RemoveSame(System.String[])">
+            <summary>
+            数组去重
+            </summary>    
+            <param name="TempArray">所要检查删除的数组</param>
+            <returns>返回数组</returns>   
+        </member>
+        <member name="T:FangPage.Common.FPConfig">
+            <summary>
+            配置类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.ReSet">
+            <summary>
+            重置配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetAppSetting(System.String)">
+            <summary>
+            获取根目录下Web.config中Settings配置节中的Key值
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetAppSetting(System.String,System.String)">
+            <summary>
+            获取根目录下Web.config中Settings配置节中的Key值，如果是webpath则进行了格式化了
+            </summary>
+            <param name="keyName"></param>
+            <param name="defvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetPathAppSetting(System.String,System.String)">
+            <summary>
+            获取该指定路径下的Web.config配置节中的Key值  
+            </summary>
+            <param name="path"></param>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetPathAppSetting(System.String,System.String,System.String)">
+            <summary>
+            获取该指定路径下的Web.config配置节中的Key值,如果路径是~则为App.config
+            </summary>
+            <param name="path"></param>
+            <param name="keyName"></param>
+            <param name="defvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetWebConfigPath(System.String)">
+            <summary>
+            获取目录最近的配置web.config的路径
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPConfig.AppSettingsKeyExists(System.String,System.Configuration.Configuration)">
+            <summary>  
+            判断appSettings中是否有此项  
+            </summary>  
+        </member>
+        <member name="M:FangPage.Common.FPConfig.AppSettingsSave(System.String,System.String)">
+            <summary>  
+            保存appSettings中某key的value值  
+            </summary>  
+            <param name="strKey">key's name</param>  
+            <param name="newValue">value</param>  
+        </member>
+        <member name="M:FangPage.Common.FPConfig.GetConnectionStringsElementValue(System.String)">
+            <summary>  
+            获取ConnectionStrings配置节中的值  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <member name="M:FangPage.Common.FPConfig.ConnectionStringsSave(System.String,System.String)">
+            <summary>
+            保存节点中ConnectionStrings的子节点配置项的值  
+            </summary>
+            <param name="ConnectionStringsName"></param>
+            <param name="elementValue"></param>
+        </member>
+        <member name="T:FangPage.Common.FPParam">
+            <summary>
+            方配参数数据
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPParam.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPParam.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="M:FangPage.Common.FPParam.#ctor(System.Object)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPParam.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            返系列化
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Item(System.String)">
+            <summary>
+            设值取值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Item(System.Int32)">
+            <summary>
+            设值取值
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Count">
+            <summary>
+            集合数
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Params">
+            <summary>
+            集合数据
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Keys">
+            <summary>
+            键数据
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Values">
+            <summary>
+            值数据
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPParam.Json">
+            <summary>
+            Json数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPParam.ContainsKey(System.String)">
+            <summary>
+            是否包含
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPParam.ContainsValue(System.String)">
+            <summary>
+            包含具有指定值的元素，则为 true；否则为 false
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPParam.Add(System.String,System.String)">
+            <summary>
+            添加值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:FangPage.Common.FPParam.Remove(System.String)">
+            <summary>
+            移除所指定的键的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPParam.Clear">
+            <summary>
+            移除所有的键和值
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPParam.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            序列化
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:FangPage.Common.FPParam.ToString">
+            <summary>
+            重写ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPExcel">
+            <summary>
+            方配Excel表格处理类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPExcel.GetExcelTable(System.String)">
+            <summary>
+            获取Excel表格数据，默认为ACE引擎
+            </summary>
+            <param name="xlspath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPExcel.GetExcelTable(System.String,System.Boolean)">
+            <summary>
+            获取Excel表格数据，默认为ACE引擎
+            </summary>
+            <param name="xlspath">Excel表格物理路径</param>
+            <param name="first">是否包含第一行</param>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPFile">
+            <summary>
+            方配文件操作类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPFile.GetMapPath(System.String)">
+            <summary>
+            根据虚拟路径获取物理路径
+            </summary>
+            <param name="virPath">指定的路径</param>
+            <returns>绝对路径</returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.GetMapPath(System.String,System.String)">
+            <summary>
+            根据虚拟路径获取物理路径
+            </summary>
+            <param name="strPath"></param>
+            <param name="virPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.GetExt(System.String)">
+            <summary>
+            获取文件扩展名，不含“.”
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.ReadFile(System.String)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.WriteFile(System.String,System.String)">
+            <summary>
+            写入文件内容，如果文件所在的文件夹不存在，则自动创建
+            </summary>
+            <param name="filename"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.AppendFile(System.String,System.String)">
+            <summary>
+            追加文件内容
+            </summary>
+            <param name="filename"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.FileCoppy(System.String,System.String)">
+            <summary>
+            拷贝文件
+            </summary>
+            <param name="orignFile">原始文件</param>
+            <param name="newFile">新文件路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.FileDel(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.FileMove(System.String,System.String)">
+            <summary>
+            移动文件
+            </summary>
+            <param name="orignFile">原始路径</param>
+            <param name="newFile">新路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.CreateDir(System.String)">
+            <summary>
+            创建文件夹
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.CopyDir(System.String,System.String)">
+            <summary>
+            复制文件夹
+            </summary>
+            <param name="sourcePath"></param>
+            <param name="targetPath"></param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.Combine(System.String,System.String)">
+            <summary>
+            合并两个目录
+            </summary>
+            <param name="path1"></param>
+            <param name="path2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.GetDirSize(System.String)">
+            <summary>
+            获取文件夹下所有文件大小
+            </summary>
+            <param name="dirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.DeleteDir(System.String)">
+            <summary>
+            递归删除文件夹目录及文件
+            </summary>
+            <param name="dir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.ClearDir(System.String)">
+            <summary>
+            清空文件夹
+            </summary>
+            <param name="dirPath"></param>
+        </member>
+        <member name="M:FangPage.Common.FPFile.Execute(System.String,System.String)">
+            <summary>
+            执行外部程序文件
+            </summary>
+            <param name="filepath"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.Execute(System.String,System.String,System.Boolean)">
+            <summary>
+            执行外部程序文件
+            </summary>
+            <param name="filepath"></param>
+            <param name="args"></param>
+            <param name="waitexit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.Execute(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)">
+            <summary>
+            执行外部程序文件
+            </summary>
+            <param name="filepath"></param>
+            <param name="args"></param>
+            <param name="waitexit"></param>
+            <param name="WindowStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.FormatBytesStr(System.Int64)">
+            <summary>
+            格式化字节数字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPFile.IsFileUse(System.String)">
+            <summary>
+            检测文件是否在使用，用在文件复制完成或删除时。
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPHttp">
+            <summary>
+            方配网络请求工具类。
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPHttp.Timeout">
+            <summary>
+            等待请求开始返回的超时时间
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPHttp.ReadWriteTimeout">
+            <summary>
+            等待读取数据完成的超时时间
+            </summary>
+        </member>
+        <member name="P:FangPage.Common.FPHttp.IgnoreSSLCheck">
+            <summary>
+            是否忽略SSL检查
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Post(System.String)">
+            <summary>
+            执行HTTP POST请求。
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Post(System.String,FangPage.Common.FPParam)">
+            <summary>
+            执行HTTP POST请求。
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="query">请求文本参数</param>
+            <returns>HTTP响应</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Post(System.String,System.String)">
+            <summary>
+            提交数据内容
+            </summary>
+            <param name="url"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.PostJson(System.String,System.Object)">
+            <summary>
+            提交JSON
+            </summary>
+            <param name="url"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.PostModel``1(System.String,``0)">
+            <summary>
+            提交实体，实体是以参数的形式提交的
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.GetModel``1(System.String,FangPage.Common.FPParam)">
+            <summary>
+            获取模型，以JSON为数据传输格式
+            </summary>
+            <param name="url"></param>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.GetList``1(System.String,FangPage.Common.FPParam)">
+            <summary>
+            获取模型，以JSON为数据传输格式
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Get(System.String)">
+            <summary>
+            执行HTTP GET请求。
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Get(System.String,FangPage.Common.FPParam)">
+            <summary>
+            执行HTTP GET请求。
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="query">请求文本参数</param>
+            <returns>HTTP响应</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Get(System.String,System.String)">
+            <summary>
+            执行HTTP GET请求。
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="query">请求文本参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.GetWebRequest(System.String,System.String,FangPage.Common.FPParam)">
+            <summary>
+            创建提交对象
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="headerParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.GetResponseAsString(System.Net.HttpWebResponse,System.Text.Encoding)">
+            <summary>
+            把响应流转换为文本。
+            </summary>
+            <param name="rsp">响应流对象</param>
+            <param name="encoding">编码方式</param>
+            <returns>响应文本</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.BuildRequestUrl(System.String,FangPage.Common.FPParam)">
+            <summary>
+            组装含参数的请求URL。
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="parameters">请求参数映射</param>
+            <returns>带参数的请求URL</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.BuildRequestUrl(System.String,System.String[])">
+            <summary>
+            组装含参数的请求URL。
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="queries">一个或多个经过URL编码后的请求参数串</param>
+            <returns>带参数的请求URL</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.BuildQuery(FangPage.Common.FPParam)">
+            <summary>
+            组装普通文本请求参数。
+            </summary>
+            <param name="param">Key-Value形式请求参数字典</param>
+            <returns>URL编码后的请求数据</returns>
+        </member>
+        <member name="M:FangPage.Common.FPHttp.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:FangPage.Common.FPIni">
+            <summary>
+            INI配置文件操作类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPIni.WriteIni(System.String,System.String,System.String,System.String)">
+            <summary>
+            写键值至INI文件
+            </summary>
+            <param name="section">项目名称</param>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="filename">文件路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPIni.WriteIni``1(``0,System.String)">
+            <summary>
+            写模型至INI文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="model"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPIni.WriteIni``1(System.String,System.String,System.String)">
+            <summary>
+            写模型键值至INI文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPIni.ReadIni(System.String,System.String,System.String)">
+            <summary>
+            读取INI键值
+            </summary>
+            <param name="section">项目名称</param>
+            <param name="key">键</param>
+            <param name="filename">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPIni.ReadIni``1(System.String,System.String)">
+            <summary>
+            读取模型INI键值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPIni.ReadIni``1(System.String)">
+            <summary>
+            读取INI至模型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPJson">
+            <summary>
+            Json数据转换类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPJson.LoadModel``1(System.String)">
+            <summary>
+            加载Json文件至模型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPJson.LoadList``1(System.String)">
+            <summary>
+            加载Json文件至集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPJson.SaveJson``1(``0,System.String)">
+            <summary>
+            保存模型至Json文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="model"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPJson.SaveJson``1(System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            保存集合至Json文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPJson.ToJson(System.Object)">
+            <summary>
+            模型转换为JSON
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPJson.ToModel``1(System.String)">
+            <summary>
+            JSON转换为模型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPJson.ToList``1(System.String)">
+            <summary>
+            JSON转换为集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPJson.ToList``1(System.String,System.Int32)">
+            <summary>
+            JSON转换为集合，如果数量少count值，则用空值填充
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPRandom">
+            <summary>
+            方配随机生成类
+            </summary>
+        </member>
+        <member name="F:FangPage.Common.FPRandom.verifycodeRange">
+            <summary>
+            验证码生成的取值范围，因为验证码有些字是相拟的，所在除去，例如0和o  1和I等
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateCode(System.Int32)">
+            <summary> 
+            生成随机字母字符串(数字字母混和) 
+            </summary> 
+            <param name="len">待生成的位数</param> 
+            <returns>生成的字母字符串</returns> 
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateCode(System.String,System.Int32)">
+            <summary>
+            生成随机字母字符串(数字字母混和)，有前辍
+            </summary>
+            <param name="prefix">前辍</param>
+            <param name="len">随机长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateCodeNum(System.Int32)">
+            <summary> 
+            生成随机数字字符串 
+            </summary> 
+            <param name="len">待生成的位数</param> 
+            <returns>生成的数字字符串</returns> 
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateCodeNum(System.String,System.Int32)">
+            <summary>
+            生成随机数字字符串 ,有前辍
+            </summary>
+            <param name="prefix">前辍</param>
+            <param name="len">随机长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateAuth(System.Int32)">
+            <summary>
+            生成随机验证码
+            </summary>
+            <param name="len">长度</param>
+            <returns>验证码</returns>
+        </member>
+        <member name="M:FangPage.Common.FPRandom.CreateGuid">
+            <summary>
+            生成GUID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPRandom.GetRandomSeed">
+            <summary>
+            随机种子
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPSerializer">
+            <summary>
+            方配序列化与反序列化操作类
+            </summary>
+        </member>
+        <member name="F:FangPage.Common.FPSerializer.lockHelper">
+            <summary>
+            锁定对象
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPSerializer.Load``1(System.String)">
+            <summary>
+            反序列化对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPSerializer.Save``1(System.String)">
+            <summary>
+             序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPSerializer.Save``1(``0,System.String)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj">对象</param>
+            <param name="filename">文件路径</param>
+        </member>
+        <member name="M:FangPage.Common.FPSerializer.Serialize``1(``0)">
+            <summary>
+            序列化对象成XML字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPUtils">
+            <summary>
+            方配通用工具类
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.MD5(System.String)">
+            <summary>
+            MD5函数
+            </summary>
+            <param name="str">原始字符串</param>
+            <returns>MD5结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.UrlEncode(System.String)">
+            <summary>
+            返回URL字符串的编码结果
+            </summary>
+            <param name="str">字符串</param>
+            <returns>编码结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.UrlDecode(System.String)">
+            <summary>
+            返回URL字符串的编码结果
+            </summary>
+            <param name="str">字符串</param>
+            <returns>解码结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.CutString(System.String,System.Int32)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="str"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.RemoveHtml(System.String)">
+            <summary>
+            移除Html标记
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetTxtFromHTML(System.String)">
+            <summary>
+            从HTML中获取文本,保留br,img
+            </summary>
+            <param name="HTML"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetDateTime">
+            <summary>
+            返回标准日期时间格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetDate">
+            <summary>
+            返回标准日期格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.String,System.String)">
+            <summary>
+            格式化指定日期格式，如果不是时间格式，则返回原值
+            </summary>
+            <param name="datetime"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.String)">
+            <summary>
+            格式化指定日期格式，如果不是时间格式，则返回原值
+            </summary>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.DateTime)">
+            <summary>
+            格式化日期时间
+            </summary>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.DateTime,System.String)">
+            <summary>
+            格式化日期时间
+            </summary>
+            <param name="datetime"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.Nullable{System.DateTime})">
+            <summary>
+            格式化日期时间，如果为null值则返回空值
+            </summary>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatDateTime(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            格式化日期时间，如果为null值则返回空值
+            </summary>
+            <param name="datetime"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.DateDiff(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            获取两个时间之间的间隔
+            </summary>
+            <param name="starttime"></param>
+            <param name="endtime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToBool(System.Object,System.Boolean)">
+            <summary>
+            string型转换为bool型
+            </summary>
+            <param name="Expression">要转换的字符串</param>
+            <param name="defValue">缺省值</param>
+            <returns>转换后的bool类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToInt(System.Object)">
+            <summary>
+            将对象转换为Int32类型
+            </summary>
+            <param name="Expression">要转换的字符串</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToInt(System.Object,System.Int32)">
+            <summary>
+            将对象转换为Int32类型
+            </summary>
+            <param name="Expression"></param>
+            <param name="defValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToFloat(System.Object)">
+            <summary>
+            string型转换为float型
+            </summary>
+            <param name="strValue">要转换的字符串</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToFloat(System.Object,System.Single)">
+            <summary>
+            string型转换为float型
+            </summary>
+            <param name="strValue">要转换的字符串</param>
+            <param name="defValue">缺省值</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDecimal(System.Object)">
+            <summary>
+            string型转换为Decimal型
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDecimal(System.Object,System.Decimal)">
+            <summary>
+            string型转换为Decimal型
+            </summary>
+            <param name="strValue">要转换的字符串</param>
+            <param name="defValue">缺省值</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDouble(System.Object)">
+            <summary>
+            string型转换为float型
+            </summary>
+            <param name="strValue">要转换的字符串</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDouble(System.Object,System.Double)">
+            <summary>
+            string型转换为float型
+            </summary>
+            <param name="strValue">要转换的字符串</param>
+            <param name="defValue">缺省值</param>
+            <returns>转换后的int类型结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDateTime(System.String)">
+            <summary>
+            字符串转化时间，如果转不了，则为当前时间
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDateTime(System.String,System.String)">
+            <summary>
+            字符串转化时间，如果转不了，则为当前时间
+            </summary>
+            <param name="strValue"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDateTime2(System.String)">
+            <summary>
+            字符串转化时间，如果转不了，则为NULL值
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToDateTime2(System.String,System.String)">
+            <summary>
+            字符串转化时间，如果转不了，则为NULL值
+            </summary>
+            <param name="strValue"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToFPData(System.String)">
+            <summary>
+            数组字符串转换为FPData
+            </summary>
+            <param name="strArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.StrToVersion(System.String)">
+            <summary>
+            字符串转版本号
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetVersion(System.String)">
+            <summary>
+            获取DLL文件的版本
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetAssembly(System.String)">
+            <summary>
+            获取DLL文件属性
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.FormatVersion(System.String)">
+            <summary>
+            格式化版本
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsContain(System.String,System.String)">
+            <summary>
+             字符串中是否包含指定的字符
+            </summary>
+            <param name="content"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsContain(System.Text.StringBuilder,System.String)">
+            <summary>
+            字符串中是否包含指定的字符
+            </summary>
+            <param name="content"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsNumeric(System.Object)">
+            <summary>
+            判断对象是否为Int32类型的数字
+            </summary>
+            <param name="Expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsNumericArray(System.String[])">
+            <summary>
+            判断给定的字符串数组(strNumber)中的数据是不是都为数值型
+            </summary>
+            <param name="strNumber">要确认的字符串数组</param>
+            <returns>是则返加true 不是则返回 false</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsNumericArray(System.String)">
+            <summary>
+            判断给定的字符串(strNumber)中的数据是不是都为数值型
+            </summary>
+            <param name="strNumber">要确认的以,分隔的字符串</param>
+            <returns>是则返加true 不是则返回 false</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsIP(System.String)">
+            <summary>
+            判断是否为ip
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsSafeSqlString(System.String)">
+            <summary>
+            检测是否有SQL危险字符
+            </summary>
+            <param name="str">要判断字符串</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsValidDomain(System.String)">
+            <summary>
+            是否为有效域
+            </summary>
+            <param name="host">域名</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.IsEmail(System.String)">
+            <summary>
+            检测是否符合email格式
+            </summary>
+            <param name="strEmail">要判断的email字符串</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.ImgToBase64(System.String)">
+            <summary>
+            图片转为Base64
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.Base64ToImg(System.String,System.String)">
+            <summary>
+            Base64转为图片文件
+            </summary>
+            <param name="base64str"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.TxtToImg(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="txt"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.GetIntranetIp">
+            <summary>
+            获取本机的局域网IP。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.Trim(System.String,System.String)">
+            <summary>
+            去除头尾字符串
+            </summary>
+            <param name="content"></param>
+            <param name="trim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.TrimStart(System.String,System.String)">
+            <summary>
+            去除头部字符串
+            </summary>
+            <param name="content"></param>
+            <param name="trim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPUtils.TrimEnd(System.String,System.String)">
+            <summary>
+            去除尾部字符串
+            </summary>
+            <param name="content"></param>
+            <param name="trim"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FangPage.Common.FPXml">
+            <summary>
+            XML处理类
+            </summary>
+        </member>
+        <member name="F:FangPage.Common.FPXml.lockHelper">
+            <summary>
+            锁定对象
+            </summary>
+        </member>
+        <member name="M:FangPage.Common.FPXml.CreateXml``1(System.String)">
+            <summary>
+            创建模型XML文件
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPXml.LoadModel``1(System.String)">
+            <summary>
+            加载XML文件至模型
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPXml.LoadList``1(System.String)">
+            <summary>
+            加载XML文件至集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPXml.SaveXml``1(``0,System.String)">
+            <summary>
+            保存模型至XML文件
+            </summary>
+            <param name="model"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPXml.SaveXml``1(System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            保存集合至XML文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:FangPage.Common.FPXml.ToModel``1(System.String)">
+            <summary>
+            XML转换为模型
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPXml.ToXml``1(``0)">
+            <summary>
+            模型转换为XML
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPXml.ToXml``1(System.Collections.Generic.List{``0})">
+            <summary>
+            集合转换为XML
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPXml.ToList``1(System.String)">
+            <summary>
+            XML转换为集合
+            </summary>
+            <param name="xml">xml</param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Common.FPXml.ModelToNode``1(System.Xml.XmlDocument,System.Xml.XmlElement,``0)">
+            <summary>
+            模型转换成为XML节点
+            </summary>
+            <param name="doc"></param>
+            <param name="root"></param>
+            <param name="model"></param>
+        </member>
+        <member name="M:FangPage.Common.FPXml.NodeToModel``1(System.Xml.XmlNode)">
+            <summary>
+            XML节点转换为模型
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
+>>>>>>> 40c835e75c79dcd5052c1139c6aee2800d8ff0a0
