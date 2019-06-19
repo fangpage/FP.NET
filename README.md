@@ -8,4 +8,4 @@
 # 安装教程
 方配.NET完全开发手册 https://www.kancloud.cn/fangpage/sdk/696833
 
-方配软件技术有限责任公司版权所有 方配官方网站 http://www.fangpage.com QQ:12677206 交流群：17672212
+方配软件技术有限责任公司版权所有 方配官方网站 http://www.fangpage.com  QQ:12677206  交流群：17672212
