@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 <doc>
     <assembly>
@@ -108,6 +107,15 @@
             <param name="commandText">存储过程名称或SQL语句</param>
             <returns>返回命令影响的行数</returns>
         </member>
+        <member name="M:FangPage.Data.DbHelper.ExecuteNonQuery(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定连接字符串,类型的DbCommand.如果没有提供参数,不返回结果.
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.DbHelper.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
             执行指定连接字符串,类型的DbCommand.如果没有提供参数,不返回结果.
@@ -132,6 +140,15 @@
             <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
             <param name="commandText">存储过程名或SQL语句</param>
             <returns>返回包含结果集的DbDataReader</returns>
+        </member>
+        <member name="M:FangPage.Data.DbHelper.ExecuteReader(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定数据库连接字符串的数据阅读器,指定参数.
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
         </member>
         <member name="M:FangPage.Data.DbHelper.ExecuteReader(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
@@ -403,6 +420,16 @@
             <param name="commandText"></param>
             <returns></returns>
         </member>
+        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行sql语句获取实体集合。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
             执行sql语句获取实体集合。
@@ -599,6 +626,15 @@
             <param name="sqlparams"></param>
             <returns></returns>
         </member>
+        <member name="M:FangPage.Data.DbHelper.ExecuteTable``1(System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行返回列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="colname"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.DbHelper.ExecuteTable(System.String,System.String,FangPage.Data.SqlParam[])">
             <summary>
             执行返回列表
@@ -608,12 +644,12 @@
             <param name="sqlparams"></param>
             <returns></returns>
         </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteTable``1(System.String,FangPage.Data.SqlParam[])">
+        <member name="M:FangPage.Data.DbHelper.ExecuteTable(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
             <summary>
             执行返回列表
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
             <param name="sqlparams"></param>
             <returns></returns>
         </member>
@@ -822,6 +858,15 @@
             </summary>
             <param name="FieldName"></param>
             <param name="OrderByType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Data.DbParam.MakeOut(System.String,System.Data.DbType,System.Object@)">
+            <summary>
+            创建输出参数
+            </summary>
+            <param name="ParamName"></param>
+            <param name="dbtype"></param>
+            <param name="Value"></param>
             <returns></returns>
         </member>
         <member name="T:FangPage.Data.FPDataManager">
@@ -1223,6 +1268,26 @@
             <param name="commandText"></param>
             <returns></returns>
         </member>
+        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定数据库连接字符串的数据阅读器,指定参数.
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定连接字符串并返回刚插入的自增ID,类型的DbCommand.如果没有提供参数,不返回结果.
+            </summary>
+            <param name="id"></param>
+            <param name="GetLastIdSql"></param>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
             执行指定连接字符串,类型的DbCommand.如果没有提供参数,不返回结果.
@@ -1335,6 +1400,15 @@
             <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
             <param name="commandText">存储过程名或SQL语句</param>
             <returns>返回包含结果集的DbDataReader</returns>
+        </member>
+        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定数据库连接字符串的数据阅读器,指定参数.
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
         </member>
         <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
@@ -1457,6 +1531,15 @@
             <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
             <param name="commandText">存储过程名称或SQL语句</param>
             <returns>返回结果集中的第一行第一列</returns>
+        </member>
+        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行指定数据库连接字符串的命令,指定参数,返回结果集中的第一行第一列.
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
         </member>
         <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
@@ -1687,6 +1770,16 @@
             <param name="commandText"></param>
             <returns></returns>
         </member>
+        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行sql语句获取实体集合。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
             <summary>
             执行sql语句获取实体集合。
@@ -1869,13 +1962,6 @@
             <param name="sqlparams"></param>
             <returns></returns>
         </member>
-        <member name="M:FangPage.Data.FPData.ExecuteTable(System.String)">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="sqlstring"></param>
-            <returns></returns>
-        </member>
         <member name="M:FangPage.Data.FPData.ExecuteTable(System.String,FangPage.Data.SqlParam[])">
             <summary>
             执行返回列表
@@ -1898,7 +1984,23 @@
             执行返回列表
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="colname"></param>
+            <param name="colnames"></param>
+            <param name="sqlparams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Data.FPData.ExecuteTable(System.String)">
+            <summary>
+            执行返回列表
+            </summary>
+            <param name="commandText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Data.FPData.ExecuteTable(System.Data.CommandType,System.String,FangPage.Data.SqlParam[])">
+            <summary>
+            执行返回列表
+            </summary>
+            <param name="commandType"></param>
+            <param name="commandText"></param>
             <param name="sqlparams"></param>
             <returns></returns>
         </member>
@@ -2046,6 +2148,26 @@
             <param name="targetObj"></param>
             <returns></returns>
         </member>
+        <member name="M:FangPage.Data.IDbProvider.MakeOutParam(System.String,System.Data.DbType,System.Int32)">
+            <summary>
+            输出参数值
+            </summary>
+            <param name="ParamName"></param>
+            <param name="DbType"></param>
+            <param name="Size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Data.DbType,System.Int32,System.Data.ParameterDirection,System.Object)">
+            <summary>
+            创建参数
+            </summary>
+            <param name="ParamName"></param>
+            <param name="DbType"></param>
+            <param name="Size"></param>
+            <param name="Direction"></param>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
         <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Object)">
             <summary>
             创建SQL参数
@@ -2069,17 +2191,6 @@
             <param name="ParamName"></param>
             <param name="DbType"></param>
             <param name="Size"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Data.DbType,System.Int32,System.Data.ParameterDirection,System.Object)">
-            <summary>
-            创建参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="DbType"></param>
-            <param name="Size"></param>
-            <param name="Direction"></param>
-            <param name="Value"></param>
             <returns></returns>
         </member>
         <member name="M:FangPage.Data.IDbProvider.CreateWhere``1(FangPage.Data.SqlParam[])">
@@ -2453,6 +2564,11 @@
             排序
             </summary>
         </member>
+        <member name="F:FangPage.Data.SqlType.Out">
+            <summary>
+            输出
+            </summary>
+        </member>
         <member name="F:FangPage.Data.SqlType.None">
             <summary>
             无
@@ -2475,6 +2591,14 @@
             <param name="SqlType"></param>
             <param name="ParamName"></param>
             <param name="Value"></param>
+        </member>
+        <member name="M:FangPage.Data.SqlParam.#ctor(FangPage.Data.SqlType,System.String,System.Data.DbType)">
+            <summary>
+            构造查询函数
+            </summary>
+            <param name="SqlType"></param>
+            <param name="ParamName"></param>
+            <param name="dbtype"></param>
         </member>
         <member name="M:FangPage.Data.SqlParam.#ctor(FangPage.Data.SqlType,System.String,FangPage.Data.WhereType,System.Object)">
             <summary>
@@ -2516,6 +2640,28 @@
             <summary>
             值
             </summary>
+        </member>
+        <member name="P:FangPage.Data.SqlParam.DbType">
+            <summary>
+            参数值类型
+            </summary>
+        </member>
+        <member name="T:FangPage.Data.TypeMap">
+            <summary>
+            SysType映射DbType
+            </summary>
+        </member>
+        <member name="M:FangPage.Data.TypeMap.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:FangPage.Data.TypeMap.GetMapType(System.Type)">
+            <summary>
+            获取数据映射
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
         </member>
         <member name="T:FangPage.Data.WhereType">
             <summary>
@@ -2614,2620 +2760,3 @@
         </member>
     </members>
 </doc>
-=======
-<?xml version="1.0"?>
-<doc>
-    <assembly>
-        <name>FangPage.Data</name>
-    </assembly>
-    <members>
-        <member name="T:FangPage.Data.AttrInfo">
-            <summary>
-            模型字段属性
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsIdentity">
-            <summary>
-            是否是标识列
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsPrimaryKey">
-            <summary>
-            是否是主键
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsBindField">
-            <summary>
-            是否绑定字段
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsLeftJoin">
-            <summary>
-            是否左联字段
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsMap">
-            <summary>
-            是否映射字段
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsTempField">
-            <summary>
-            是否临时字段
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.GUID">
-            <summary>
-            是否是GUID
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.IsNtext">
-            <summary>
-            是否是内容大字段
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.TableName">
-            <summary>
-            表名称
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.Number">
-            <summary>
-            表编号
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.AttrInfo.ColName">
-            <summary>
-            表字段
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.DbHelper">
-            <summary>
-            数据库帮助
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbHelper.FPData">
-            <summary>
-            方配数据库管理器
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.Reset">
-            <summary>
-            重置数据库配置
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.Reset(System.String)">
-            <summary>
-            重置数据库配置
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteNonQuery(System.String)">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery("SELECT * FROM [table123]");
-            </remarks>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteNonQuery(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本, 其它.)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.如果没有提供参数,不返回结果.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本, 其它.)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">DbParameter参数数组</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteReader(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的数据阅读器.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteReader(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的数据阅读器,指定参数.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <param name="commandParameters">SqlParamter参数数组(new DbParameter("@prodid", 24))</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDataset(System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset("SELECT * FROM [table1]");
-            </remarks>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDataset(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDataset(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例: 
-             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">SqlParamters参数数组</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteScalar(System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.
-            </summary>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteScalar(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteScalar(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的命令,指定参数,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">分配给命令的SqlParamter参数数组</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1(System.Collections.Generic.List{``0})">
-            <summary>
-            获取实体主键字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="list"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1(System.String,System.Collections.Generic.List{``0})">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <param name="list"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1(System.String)">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体字段值集合，带多项查询，多项排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取字段值集合。
-            </summary>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteField(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体字段值集合
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1">
-            <summary>
-            获取实体集合，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(FangPage.Data.OrderBy)">
-            <summary>
-            获取指定主键排序的实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32)">
-            <summary>
-            获取前几条的实体集合，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,FangPage.Data.OrderBy)">
-            <summary>
-            获取指定主键排序前几条的实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(FangPage.Data.OrderBy,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，指定主键排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="orderby"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,FangPage.Data.OrderBy,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，指定主键排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="orderby"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,System.Int32)">
-            <summary>
-            获取分页实体集合,默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,System.Int32,FangPage.Data.OrderBy)">
-            <summary>
-            获取分页实体集合,默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Int32,System.Int32,FangPage.Data.SqlParam[])">
-            <summary>
-             获取分页实体集合,带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Data.CommandType,System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteList``1(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteInsert``1(``0)">
-            <summary>
-            插入数据
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteUpdate``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="model"></param>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteUpdate``1(FangPage.Data.SqlParam[])">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteModel``1(System.Int32)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="primary"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteModel``1(System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="primary"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteModel``1(FangPage.Data.SqlParam[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteModel``1(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDelete``1(System.Int32)">
-            <summary>
-            删除实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDelete``1(System.String)">
-            <summary>
-            删除多个实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="idlist"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteDelete``1(FangPage.Data.SqlParam[])">
-            <summary>
-            删除参数自定义实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteCount``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体总数
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteCount(System.String)">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteCount(System.Data.CommandType,System.String)">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteCount(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteCount(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteMax``1(System.String)">
-            <summary>
-            获取最大值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteMax``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取最大值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteSum``1(System.String)">
-            <summary>
-            获取总和
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteSum``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取总和
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteAvg``1(System.String)">
-            <summary>
-            执行返回平均值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteAvg``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回平均值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteTable(System.String)">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="sqlstring"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteTable(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="tablename"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteTable(System.String,System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="tablename"></param>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbHelper.ExecuteTable``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.DbParam">
-            <summary>
-            数据库参数操作
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.String)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="WhereStr"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.String,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.Char,System.String,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.String,System.Char,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.Char,System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeAndWhere(System.String,System.Char,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建And查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.String)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="WhereStr"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.String,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.Char,System.String,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.String,System.Char,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.Char,System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrWhere(System.String,System.Char,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建Or查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.String)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="WhereStr"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.String,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.Char,System.String,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.String,System.Char,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.Char,System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="Brackets"></param>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeWhere(System.String,System.Char,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            创建查询参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Brackets"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeSet(System.String,System.Object)">
-            <summary>
-            创建赋值参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbParam.MakeOrderBy(System.String,FangPage.Data.OrderBy)">
-            <summary>
-            创建排序参数
-            </summary>
-            <param name="FieldName"></param>
-            <param name="OrderByType"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.FPDataManager">
-            <summary>
-            方配数据库管理器
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.FPDataManager.Item(System.String)">
-            <summary>
-            实例化数据库实例
-            </summary>
-            <param name="dbconnpath"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPDataManager.ReSetFPData(System.String)">
-            <summary>
-            重置方配数据库对象
-            </summary>
-            <param name="dbconnpath"></param>
-        </member>
-        <member name="M:FangPage.Data.FPDataManager.ReSetFPData">
-            <summary>
-            重置方配数据库对象
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.FPDataManager.GetFPDatas">
-            <summary>
-            获取所有的数据库对象
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.GUID">
-            <summary>
-            表示该字段为GUID
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.GUID.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.GUID.#ctor(System.Boolean)">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.GUID.IsGuid">
-            <summary>
-            是否为标识列
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.GUID.Length">
-            <summary>
-            长度
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.GUID.Value">
-            <summary>
-            GUID值
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.LeftJoin">
-            <summary>
-            左联
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.LeftJoin.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.LeftJoin.#ctor(System.String,System.String)">
-            <summary>
-            左联
-            </summary>
-            <param name="tablename">表名称</param>
-            <param name="field">字段名称</param>
-        </member>
-        <member name="M:FangPage.Data.LeftJoin.#ctor(System.String,System.Int32,System.String)">
-            <summary>
-            左联
-            </summary>
-            <param name="tablename">表名称</param>
-            <param name="number">编号</param>
-            <param name="field">字段名称</param>
-        </member>
-        <member name="P:FangPage.Data.LeftJoin.TableName">
-            <summary>
-            左联表名称
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.LeftJoin.Number">
-            <summary>
-            表编号
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.LeftJoin.Field">
-            <summary>
-            左联表的字段
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.Map">
-            <summary>
-            映射
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.Map.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.Map.#ctor(System.String,System.String)">
-            <summary>
-            映射
-            </summary>
-            <param name="tablename">表名称</param>
-            <param name="field">字段名称</param>
-        </member>
-        <member name="M:FangPage.Data.Map.#ctor(System.String,System.Int32,System.String)">
-            <summary>
-            映射
-            </summary>
-            <param name="tablename">表名称</param>
-            <param name="number">编号</param>
-            <param name="field">字段名称</param>
-        </member>
-        <member name="P:FangPage.Data.Map.TableName">
-            <summary>
-            映射表名称
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Map.Number">
-            <summary>
-            表编号
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Map.Field">
-            <summary>
-            映射表的字段
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.TempField">
-            <summary>
-            表示该属性为绑定临时字段，并不在表字段当中
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.TempField.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.TempField.#ctor(System.Boolean)">
-            <summary>
-            是否为临时字段
-            </summary>
-            <param name="isbind">是否为表中的字段</param>
-        </member>
-        <member name="P:FangPage.Data.TempField.IsTemp">
-            <summary>
-            是否为临时字段
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.BindTable">
-            <summary>
-            绑定表格
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.BindTable.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.BindTable.#ctor(System.String)">
-            <summary>
-            应用数据库表前涰
-            </summary>
-            <param name="tablename">表前涰的名称</param>
-        </member>
-        <member name="P:FangPage.Data.BindTable.TableName">
-            <summary>
-            应用数据库表前涰
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.ModelPrefix">
-            <summary>
-            应用数据库表前涰
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.ModelPrefix.#ctor">
-            <summary>
-            构造函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.ModelPrefix.#ctor(System.String)">
-            <summary>
-            应用数据库表前涰
-            </summary>
-            <param name="prefix">表前涰的名称</param>
-        </member>
-        <member name="P:FangPage.Data.ModelPrefix.Prefix">
-            <summary>
-            应用数据库表前涰
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.DbConfigInfo">
-            <summary>
-            方配数据库基础配置模型
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbConfigInfo.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbConfigInfo.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="dbconnstring"></param>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.DbType">
-            <summary>
-            数据库类型
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.DataSource">
-            <summary>
-            数据库路径
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.DbName">
-            <summary>
-            数据库名称
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.UserId">
-            <summary>
-            数据库用户ID
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.Password">
-            <summary>
-            数据库密码
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.Prefix">
-            <summary>
-            数据库中表的前缀
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.Provider">
-            <summary>
-            数据库提供引擎
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.Port">
-            <summary>
-            数据库端口
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.DbConfigInfo.DbConnString">
-            <summary>
-            数据库连接串
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbConfigInfo.ToString">
-            <summary>
-            转化为字符串
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.DbConfigs">
-            <summary>
-            方配数据库基础配置类
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbConfigs.GetDbConfigInfo(System.String)">
-            <summary>
-            获取基础配置对象
-            </summary>.
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.FPData">
-            <summary>
-            方配数据库引擎
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.m_dbconfig">
-            <summary>
-            数据库配置
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.m_factory">
-            <summary>
-            数据工厂实例
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.m_dbprovider">
-            <summary>
-            数据接口
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.lockHelper">
-            <summary>
-            读取数据接口锁
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.m_dbconnnpath">
-            <summary>
-            数据库连接名称
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.FPData.#ctor(System.String)">
-            <summary>
-            实例化
-            </summary>
-            <param name="dbconnpath"></param>
-        </member>
-        <member name="M:FangPage.Data.FPData.#ctor(FangPage.Data.DbConfigInfo)">
-            <summary>
-            
-            </summary>
-            <param name="dbconfig"></param>
-        </member>
-        <member name="P:FangPage.Data.FPData.DbConfig">
-            <summary>
-            数据库配置信息
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.FPData.DbProvider">
-            <summary>
-            IDbProvider接口
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.FPData.Factory">
-            <summary>
-            DbFactory实例
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.FPData.AttachParameters(System.Data.Common.DbCommand,System.Data.Common.DbParameter[])">
-            <summary>
-            将DbParameter参数数组(参数值)分配给DbCommand命令.
-            这个方法将给任何一个参数分配DBNull.Value;
-            该操作将阻止默认值的使用.
-            </summary>
-            <param name="command">命令名</param>
-            <param name="commandParameters">DbParameters数组</param>
-        </member>
-        <member name="M:FangPage.Data.FPData.PrepareCommand(System.Data.Common.DbCommand,System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[],System.Boolean@)">
-            <summary>
-            预处理用户提供的命令,数据库连接/事务/命令类型/参数
-            </summary>
-            <param name="command">要处理的DbCommand</param>
-            <param name="connection">数据库连接</param>
-            <param name="transaction">一个有效的事务或者是null值</param>
-            <param name="commandType">命令类型 (存储过程,命令文本, 其它.)</param>
-            <param name="commandText">存储过程名或都SQL命令文本</param>
-            <param name="commandParameters">和命令相关联的DbParameter参数数组,如果没有参数为'null'</param>
-            <param name="mustCloseConnection"><c>true</c> 如果连接是打开的,则为true,其它情况下为false.</param>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.String)">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery("SELECT * FROM [table123]");
-            </remarks>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.String)">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.
-            </summary>
-            <param name="id"></param>
-            <param name="GetLastIdSql"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本, 其它.)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定连接字符串,并返回刚插入的自增ID
-            </summary>
-            <param name="id"></param>
-            <param name="GetLastIdSql"></param>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定连接字符串,类型的DbCommand.如果没有提供参数,不返回结果.
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本, 其它.)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">DbParameter参数数组</param>
-            <returns>返回命令影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定连接字符串并返回刚插入的自增ID,类型的DbCommand.如果没有提供参数,不返回结果.
-            </summary>
-            <param name="id"></param>
-            <param name="GetLastIdSql"></param>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接对象的命令 
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders");
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型(存储过程,命令文本或其它.)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接对象的命令并返回自增ID 
-            </summary>
-            <param name="id"></param>
-            <param name="GetLastIdSql"></param>
-            <param name="connection"></param>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接对象的命令
-            </summary>
-            <remarks>
-            示例:  
-             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型(存储过程,命令文本或其它.)</param>
-            <param name="commandText">T存储过程名称或SQL语句</param>
-            <param name="commandParameters">SqlParamter参数数组</param>
-            <returns>返回影响的行数</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteNonQuery(System.Int32@,System.String,System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接对象的命令
-            </summary>
-            <param name="id"></param>
-            <param name="GetLastIdSql"></param>
-            <param name="connection"></param>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.FPData.DbConnectionOwnership">
-            <summary>
-            枚举,标识数据库连接是由BaseDbHelper提供还是由调用者提供
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.DbConnectionOwnership.Internal">
-            <summary>由BaseDbHelper提供连接</summary>
-        </member>
-        <member name="F:FangPage.Data.FPData.DbConnectionOwnership.External">
-            <summary>由调用者提供连接</summary>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[],FangPage.Data.FPData.DbConnectionOwnership)">
-            <summary>
-            执行指定数据库连接对象的数据阅读器.
-            </summary>
-            <remarks>
-            如果是BaseDbHelper打开连接,当连接关闭DataReader也将关闭.
-            如果是调用都打开连接,DataReader由调用都管理.
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="transaction">一个有效的事务,或者为 'null'</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <param name="commandParameters">DbParameters参数数组,如果没有参数则为'null'</param>
-            <param name="connectionOwnership">标识数据库连接对象是由调用者提供还是由BaseDbHelper提供</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的数据阅读器.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的数据阅读器,指定参数.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <param name="commandParameters">SqlParamter参数数组(new DbParameter("@prodid", 24))</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接对象的数据阅读器.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteReader(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            [调用者方式]执行指定数据库连接对象的数据阅读器,指定参数.
-            </summary>
-            <remarks>
-            示例:  
-             DbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandParameters">SqlParamter参数数组</param>
-            <returns>返回包含结果集的DbDataReader</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDataset(System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset("SELECT * FROM [table1]");
-            </remarks>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDataset(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDataset(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例: 
-             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">SqlParamters参数数组</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDataset(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接对象的命令,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders");
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDataset(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接对象的命令,指定存储过程参数,返回DataSet.
-            </summary>
-            <remarks>
-            示例:  
-             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名或SQL语句</param>
-            <param name="commandParameters">SqlParamter参数数组</param>
-            <returns>返回一个包含结果集的DataSet</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.
-            </summary>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接字符串的命令,指定参数,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">分配给命令的SqlParamter参数数组</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.Common.DbConnection,System.Data.CommandType,System.String)">
-            <summary>
-            执行指定数据库连接对象的命令,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount");
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteScalar(System.Data.Common.DbConnection,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行指定数据库连接对象的命令,指定参数,返回结果集中的第一行第一列.
-            </summary>
-            <remarks>
-            示例:  
-             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new DbParameter("@prodid", 24));
-            </remarks>
-            <param name="connection">一个有效的数据库连接对象</param>
-            <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-            <param name="commandText">存储过程名称或SQL语句</param>
-            <param name="commandParameters">分配给命令的SqlParamter参数数组</param>
-            <returns>返回结果集中的第一行第一列</returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1(System.Collections.Generic.List{``0})">
-            <summary>
-            获取实体主键字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="list"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1(System.String,System.Collections.Generic.List{``0})">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <param name="list"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1(System.String)">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体字段值集合
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体字段值集合，带多项查询，多项排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="field"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取字段值集合。
-            </summary>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteField(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体字段值集合
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1">
-            <summary>
-            获取实体集合，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(FangPage.Data.OrderBy)">
-            <summary>
-            获取指定主键排序的实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32)">
-            <summary>
-            获取前几条的实体集合，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,FangPage.Data.OrderBy)">
-            <summary>
-            获取指定主键排序前几条的实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(FangPage.Data.OrderBy,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，指定主键排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="orderby"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,FangPage.Data.OrderBy,FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体集合，带多项查询，指定主键排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="orderby"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,System.Int32)">
-            <summary>
-            获取分页实体集合,默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,System.Int32,FangPage.Data.OrderBy)">
-            <summary>
-            获取分页实体集合,默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="orderby"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Int32,System.Int32,FangPage.Data.SqlParam[])">
-            <summary>
-             获取分页实体集合,带多项查询，默认主键降序排序。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Data.CommandType,System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteList``1(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteInsert``1(``0)">
-            <summary>
-            插入数据
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteUpdate``1(``0)">
-            <summary>
-            更新数据
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteUpdate``1(FangPage.Data.SqlParam[])">
-            <summary>
-            更新数据
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteModel``1(System.Int32)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="primary"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteModel``1(System.String)">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="primary"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteModel``1(FangPage.Data.SqlParam[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteModel``1(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            执行sql语句获取实体集合。
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="commandText"></param>
-            <param name="dbparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDelete``1(System.Int32)">
-            <summary>
-            删除实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDelete``1(System.String)">
-            <summary>
-            删除多个实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="idlist"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteDelete``1(FangPage.Data.SqlParam[])">
-            <summary>
-            删除参数自定义实体
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteCount``1(FangPage.Data.SqlParam[])">
-            <summary>
-            获取实体总数
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteCount(System.String)">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteCount(System.Data.CommandType,System.String)">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteCount(System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteCount(System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
-            <summary>
-            获取统计总数
-            </summary>
-            <param name="commandType"></param>
-            <param name="commandText"></param>
-            <param name="commandParameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteMax``1(System.String)">
-            <summary>
-            获取最大值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteMax``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取最大值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteSum``1(System.String)">
-            <summary>
-            获取总和
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteSum``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            获取总和
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteAvg``1(System.String)">
-            <summary>
-            执行返回平均值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteAvg``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回平均值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteTable(System.String)">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="sqlstring"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteTable(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="tablename"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteTable(System.String,System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <param name="tablename"></param>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.FPData.ExecuteTable``1(System.String,FangPage.Data.SqlParam[])">
-            <summary>
-            执行返回列表
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.DbType">
-            <summary>
-            数据库类型
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.DbType.SqlServer">
-            <summary>
-            SqlServer数据库
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.DbType.Access">
-            <summary>
-            Access数据库
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.DbType.Oracle">
-            <summary>
-            Oracle数据库
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.DbType.MySql">
-            <summary>
-            MySql数据库
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.DbType.SQLite">
-            <summary>
-            SQLite数据库
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.DbUtils">
-            <summary>
-            方配Db处理工具类
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetAttrInfo(System.Reflection.PropertyInfo)">
-            <summary>
-            获取模型字段属性
-            </summary>
-            <param name="info"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetPrimaryKeyInfo(System.Type)">
-            <summary>
-            获取当前对象所有的主键
-            </summary>
-            <param name="type">对象类型</param>
-            <returns>主键字段名集合</returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetIdentityInfo(System.Type)">
-            <summary>
-            获取当前对象所有的标识列
-            </summary>
-            <param name="type">对象类型</param>
-            <returns>主键字段名集合</returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetPrimaryKey(System.Type)">
-            <summary>
-            获取主键
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetLeftJoinList(System.Type)">
-            <summary>
-            获取映射属性列表
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetModelTable(System.Type)">
-            <summary>
-            获取模型数据库表名称
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.FormatInString(System.String)">
-            <summary>
-            格式化IN查询语句，因为如果是字符查询，则需要加入单引号
-            </summary>
-            <param name="strContent"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.RegEsc(System.String)">
-            <summary>
-            SQL SERVER SQL语句转义
-            </summary>
-            <param name="str">需要转义的关键字符串</param>
-            <returns>转义后的字符串</returns>
-        </member>
-        <member name="M:FangPage.Data.DbUtils.GetWhereTypeString(FangPage.Data.WhereType)">
-            <summary>
-            获取查询方式字符
-            </summary>
-            <param name="wheretype"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.IDbProvider">
-            <summary>
-            数据库对象提供接口
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.Instance">
-            <summary>
-            返回DbProviderFactory实例
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.DeriveParameters(System.Data.IDbCommand)">
-            <summary>
-            检索SQL参数信息并填充
-            </summary>
-            <param name="cmd"></param>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.IsShrinkData">
-            <summary>
-            是否支持数据库收缩优化
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.IsStoreProc">
-            <summary>
-            是否支持存储过程
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeInParam(System.String,System.Object)">
-            <summary>
-            通过名称生成参数并赋值
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeInParam``1(System.Reflection.PropertyInfo,``0)">
-            <summary>
-            通过实体对象生成参数并赋值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="propInfo"></param>
-            <param name="targetObj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Object)">
-            <summary>
-            创建SQL参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Data.DbType)">
-            <summary>
-            创建SQL参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="DbType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Data.DbType,System.Int32)">
-            <summary>
-            创建SQL参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="DbType"></param>
-            <param name="Size"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.MakeParam(System.String,System.Data.DbType,System.Int32,System.Data.ParameterDirection,System.Object)">
-            <summary>
-            创建参数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="DbType"></param>
-            <param name="Size"></param>
-            <param name="Direction"></param>
-            <param name="Value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateWhere``1(FangPage.Data.SqlParam[])">
-            <summary>
-            无参创建查询条件
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateWhere(System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            有参创建查询条件
-            </summary>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateWhere``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建SELECT查询条件,解释LEFT JOIN
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="TableName"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建实体查询语句（联表）
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.Int32,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建实体查询语句（联表）
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.Int32,FangPage.Data.OrderBy,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建实体查询语句（联表）
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="tops"></param>
-            <param name="orderby"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.Int32,System.Int32,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-             创建分页实体查询语句（联表)
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.Int32,System.Int32,FangPage.Data.OrderBy,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建分页实体查询语句（联表)
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="pagesize"></param>
-            <param name="pageindex"></param>
-            <param name="orderby"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSelect``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            创建指定查询字段的实体查询语句，为空测为查询主键
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="keys"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateInsert``1(``0,System.Collections.Generic.List{System.Data.Common.DbParameter},System.String@)">
-            <summary>
-            构造插入SQL语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="targetObj"></param>
-            <param name="dbparamlist"></param>
-            <param name="GetLastIdSql"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateUpdate``1(``0,System.Collections.Generic.List{System.Data.Common.DbParameter})">
-            <summary>
-            构造更新语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="targetObj"></param>
-            <param name="dbparamlist"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateUpdate``1(System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            有参构建更新语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateDelete``1(System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建删除语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateCount``1(System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建删除语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateMax``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建最大值语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateSum``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建总和语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateAvg``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建平均语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateTable(System.String,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建表语句
-            </summary>
-            <param name="tablename"></param>
-            <param name="colname"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FangPage.Data.IDbProvider.CreateTable``1(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},FangPage.Data.SqlParam[])">
-            <summary>
-            构建表语句
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="colname"></param>
-            <param name="dbparamlist"></param>
-            <param name="sqlparams"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FangPage.Data.DES">
-            <summary> 
-            加密
-            </summary> 
-        </member>
-        <member name="M:FangPage.Data.DES.Encode(System.String)">
-            <summary>
-            DES加密字符串
-            </summary>
-            <param name="encryptString">待加密的字符串</param>
-            <returns>加密成功返回加密后的字符串,失败返回源串</returns>
-        </member>
-        <member name="M:FangPage.Data.DES.Encode(System.String,System.String)">
-            <summary>
-            DES加密字符串
-            </summary>
-            <param name="encryptString">待加密的字符串</param>
-            <param name="encryptKey">加密密钥,要求为8位</param>
-            <returns>加密成功返回加密后的字符串,失败返回源串</returns>
-        </member>
-        <member name="M:FangPage.Data.DES.Decode(System.String)">
-            <summary>
-            DES解密字符串
-            </summary>
-            <param name="decryptString">待解密的字符串</param>
-            <returns>解密成功返回解密后的字符串,失败返源串</returns>
-        </member>
-        <member name="M:FangPage.Data.DES.Decode(System.String,System.String)">
-            <summary>
-            DES解密字符串
-            </summary>
-            <param name="decryptString">待解密的字符串</param>
-            <param name="decryptKey">解密密钥,要求为8位,和加密密钥相同</param>
-            <returns>解密成功返回解密后的字符串,失败返源串</returns>
-        </member>
-        <member name="T:FangPage.Data.Identity">
-            <summary>
-            表示该字段为标识列
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Identity.IsIdentity">
-            <summary>
-            是否为标识列
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.NText">
-            <summary>
-            标识字段是否NText类型数据
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.NText.IsNText">
-            <summary>
-            是否为内容字段
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.OrderBy">
-            <summary>
-            排序类型
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.OrderBy.DESC">
-            <summary>
-            降序
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.OrderBy.ASC">
-            <summary>
-            升序
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.Pager">
-            <summary>
-            分页实体
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.pageurl">
-            <summary>
-            页面连接地址
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.pageindex">
-            <summary>
-            当前页
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.total">
-            <summary>
-            总记录数
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.pagesize">
-            <summary>
-            页码尺寸
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.pagecount">
-            <summary>
-            总页数
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.nextpage">
-            <summary>
-            下一页
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.prepage">
-            <summary>
-            上一页
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.extpage">
-            <summary>
-            周边页码显示个数上限
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.startpage">
-            <summary>
-            显示开始页码数
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.endpage">
-            <summary>
-            显示结束页码数
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.Pager.pagenum">
-            <summary>
-            数字页码连接
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.PrimaryKey">
-            <summary>
-            表示该字段为主键
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.PrimaryKey.IsPrimaryKey">
-            <summary>
-            是否为主键
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.BindField">
-            <summary>
-            表示该属性为绑定数据库表中的字段
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.BindField.#ctor">
-            <summary>
-            构告函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.BindField.#ctor(System.Boolean)">
-            <summary>
-            表中的字段
-            </summary>
-            <param name="isbind">是否为表中的字段</param>
-        </member>
-        <member name="P:FangPage.Data.BindField.IsBind">
-            <summary>
-            是否为绑定表中的字段，默认为绑定
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.SqlType">
-            <summary>
-            查询类型
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.SqlType.And">
-            <summary>
-            And
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.SqlType.Or">
-            <summary>
-            OR
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.SqlType.Set">
-            <summary>
-            赋值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.SqlType.OrderBy">
-            <summary>
-            排序
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.SqlType.None">
-            <summary>
-            无
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.SqlParam">
-            <summary>
-            查询参数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.SqlParam.#ctor">
-            <summary>
-            无参构造函数
-            </summary>
-        </member>
-        <member name="M:FangPage.Data.SqlParam.#ctor(FangPage.Data.SqlType,System.String,System.Object)">
-            <summary>
-            构造查询函数
-            </summary>
-            <param name="SqlType"></param>
-            <param name="ParamName"></param>
-            <param name="Value"></param>
-        </member>
-        <member name="M:FangPage.Data.SqlParam.#ctor(FangPage.Data.SqlType,System.String,FangPage.Data.WhereType,System.Object)">
-            <summary>
-            构造查询函数
-            </summary>
-            <param name="SqlType"></param>
-            <param name="ParamName"></param>
-            <param name="WhereType"></param>
-            <param name="Value"></param>
-        </member>
-        <member name="M:FangPage.Data.SqlParam.#ctor(System.String,FangPage.Data.OrderBy)">
-            <summary>
-            构造排序函数
-            </summary>
-            <param name="ParamName"></param>
-            <param name="orderby"></param>
-        </member>
-        <member name="P:FangPage.Data.SqlParam.SqlType">
-            <summary>
-            参数类型
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.SqlParam.ParamName">
-            <summary>
-            查询参数的名称
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.SqlParam.WhereType">
-            <summary>
-            SQL查询方式
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.SqlParam.WhereTypeStr">
-            <summary>
-            Where查询运算附
-            </summary>
-        </member>
-        <member name="P:FangPage.Data.SqlParam.Value">
-            <summary>
-            值
-            </summary>
-        </member>
-        <member name="T:FangPage.Data.WhereType">
-            <summary>
-            查询方式
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.Equal">
-            <summary>
-            等于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.NotEqual">
-            <summary>
-            不等于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.GreaterThan">
-            <summary>
-            大于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.GreaterThanEqual">
-            <summary>
-            大于等于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.LessThan">
-            <summary>
-            小于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.LessThanEqual">
-            <summary>
-            小于等于
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.Like">
-            <summary>
-            模糊查询
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.NotLike">
-            <summary>
-            反向模糊查询
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.In">
-             <summary>
-            内部
-             </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.NotIn">
-            <summary>
-            反向内部
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.Contain">
-            <summary>
-            包含
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.ContainOrEmpty">
-            <summary>
-            包含或者为空值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.NotContain">
-            <summary>
-            不包含
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.IsNull">
-            <summary>
-            为Null值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.IsNotNull">
-            <summary>
-            不为Null值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.IsNullOrEmpty">
-            <summary>
-            为Null值或为空值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.IsEmpty">
-            <summary>
-            为空值
-            </summary>
-        </member>
-        <member name="F:FangPage.Data.WhereType.Custom">
-            <summary>
-            自定义
-            </summary>
-        </member>
-    </members>
-</doc>
->>>>>>> 40c835e75c79dcd5052c1139c6aee2800d8ff0a0
