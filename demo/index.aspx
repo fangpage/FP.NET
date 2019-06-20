@@ -13,6 +13,12 @@ span a{ padding:0 5px;text-decoration:none;}
 </head>
 <body>
 <h1>欢迎使用方配.NET框架</h1>
+<ol>
+    <li>完全开发手册：<a href="https://www.kancloud.cn/fangpage/sdk/696833" target="_blank">https://www.kancloud.cn/fangpage/sdk/696833</a></li>
+    <li>GitHub：<a href="https://github.com/fangpage/FP.NET" target="_blank">https://github.com/fangpage/FP.NET</a></li>
+    <li>码云：<a href="https://gitee.com/fangpage/FP.NET" target="_blank">https://gitee.com/fangpage/FP.NET</a></li>
+</ol>
+<h2></h2>
 <span>Copyright © 方配软件(FangPage.Com)&nbsp;&nbsp;官方网站:<a href="http://www.fangpage.com" target="_blank">www.fangpage.com</a>&nbsp;&nbsp;QQ：12677206&nbsp;&nbsp;技术群:17672212</span>
 </body>
 </html>
